@@ -1,38 +1,49 @@
-.App {
-  text-align: center;
+/* --- Barra de Navegación --- */
+.menu-navegacion {
+  background-color: #282c34; /* Un gris oscuro lindo */
+  padding: 15px 30px;
+  display: flex;
+  gap: 30px; /* Separación entre los enlaces */
+  justify-content: center; /* Centrar el menú */
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* --- Estilos de los enlaces (Link) --- */
+.menu-navegacion a {
+  color: white;
+  text-decoration: none; /* Le saca la línea de abajo al link */
+  font-size: 18px;
+  font-family: sans-serif;
+  font-weight: bold;
+  transition: color 0.3s ease; /* Efecto suave al pasar el mouse */
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* Efecto cuando pasas el mouse por encima del enlace */
+.menu-navegacion a:hover {
+  color: #61dafb; /* El celeste típico de React */
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.contenedor-principal {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  min-height: 100vh; /* 100% del alto de la ventana (Viewport Height) */
 }
 
-.App-link {
-  color: #61dafb;
+/* --- Estilos para los Títulos de las páginas --- */
+h1 {
+  text-align: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+  margin-top: 50px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+p {
+  text-align: center;
+  margin-top: 50px;
+}
+
+footer{
+  text-align: center;
+  margin-top: auto; 
+  padding: 20px; 
+  background-color: #f1f1f1 
 }
