@@ -1,3 +1,5 @@
+import FormularioContacto from "../componentes/FormularioContacto";
+
 const Contacto = () => {
     return(
         <div>
@@ -6,6 +8,11 @@ const Contacto = () => {
                 <p>
                     Aqui puedes encontrar todas las formas de contactarte con nosotros
                 </p>
+                <p>
+                    Formulario para enviar un correo como parte de la empresa:
+                </p>
+
+                <FormularioContacto/>
             </div>
         </div>
     );
