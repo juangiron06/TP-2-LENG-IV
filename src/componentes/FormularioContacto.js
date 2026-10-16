@@ -1,4 +1,4 @@
-import react from "react";
+import React from "react";
 import emailjs from '@emailjs/browser';
 
 const FormularioContacto = () =>{
@@ -18,7 +18,7 @@ const FormularioContacto = () =>{
 
         if (nombre.trim() === "") {
             alert("Error: El campo 'Nombre y Apellido' no puede estar vacío.");
-            return; // El return detiene la ejecución de la función para que no se envíe el correo
+            return; 
         }
         
         if (!regexNombre.test(nombre)) {
@@ -52,22 +52,41 @@ const FormularioContacto = () =>{
     };
 
     return(
-        <div className="contenedor-formulario">
-            <form onSubmit={handleSubmit}>
-                <div className="grupo-formulario">
-                    <label>Nombre y apellido:</label>
-                    <input type="text" name="nombre"></input>
-                </div>
-                <div className="grupo-formulario">
-                    <label>Correo electrónico:</label>
-                    <input type="email" name="correo"></input>
-                </div>
-                <div className="grupo-formulario">
-                    <label>Mensaje (maximo de 300 caracteres): </label>
-                    <textarea name="mensaje" maxLength={300} rows={5}></textarea>
-                </div>
-                <button type="submit" className="boton-enviar">Enviar</button>
-            </form>
+        <div className="contenedor-formulario" style={{ display: 'flex', flexWrap: 'wrap', gap: '30px', padding: '20px' }}>
+            
+            {/* Formulario */}
+            <div style={{ flex: 1, minWidth: '300px' }}>
+                <form onSubmit={handleSubmit}>
+                    <div className="grupo-formulario">
+                        <label>Nombre y apellido:</label>
+                        <input type="text" name="nombre"></input>
+                    </div>
+                    <div className="grupo-formulario">
+                        <label>Correo electrónico:</label>
+                        <input type="email" name="correo"></input>
+                    </div>
+                    <div className="grupo-formulario">
+                        <label>Mensaje (maximo de 300 caracteres): </label>
+                        <textarea name="mensaje" maxLength={300} rows={5}></textarea>
+                    </div>
+                    <button type="submit" className="boton-enviar">Enviar</button>
+                </form>
+            </div>
+
+            {/* Mapa Embebido */}
+            <div style={{ flex: 1, minWidth: '300px' }}>
+                <iframe
+                    title="Ubicación UCASAL"
+                    src="https://maps.google.com/maps?q=Universidad+Catolica+de+Salta,+Campo+Casta%C3%B1ares,+Salta&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                    width="100%"
+                    height="100%"
+                    style={{ border: 0, minHeight: '300px', borderRadius: '8px' }}
+                    allowFullScreen=""
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                ></iframe>
+            </div>
+
         </div>
     );
 };
